@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Fleet – Wheelie Good Wheels</title>
+  <meta name="description" content="Browse our fleet of 5-star rated vehicles available on Turo in the Tampa Bay / Brandon, FL area. Tesla Model Y and Hyundai Santa Fe Sport available now." />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* Fleet page extras */
+    .fleet-page { padding: 96px 0; background: var(--off-white); }
+    .car-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 40px;
+      transition: box-shadow 0.25s;
+    }
+    .car-card:hover { box-shadow: var(--shadow-lg); }
+    @media (max-width: 820px) {
+      .car-card { grid-template-columns: 1fr; }
+      .car-card.reverse .car-img { order: -1; }
+    }
+    .car-img { position: relative; min-height: 340px; overflow: hidden; }
+    .car-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .car-card:hover .car-img img { transform: scale(1.04); }
+    .car-badge {
+      position: absolute; top: 16px; left: 16px;
+      background: var(--orange); color: var(--white);
+      font-size: 12px; font-weight: 700;
+      padding: 5px 14px; border-radius: 999px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .car-rating {
+      position: absolute; top: 16px; right: 16px;
+      background: rgba(0,0,0,0.65);
+      color: var(--white);
+      font-size: 13px; font-weight: 700;
+      padding: 5px 12px; border-radius: 999px;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .car-details { padding: 44px 44px 40px; display: flex; flex-direction: column; justify-content: center; }
+    @media (max-width: 820px) { .car-details { padding: 32px 28px; } }
+    .car-year { font-size: 13px; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .car-details h2 { font-size: 32px; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.15; }
+    .car-details .tagline { font-size: 16px; color: var(--gray-600); margin-bottom: 28px; line-height: 1.7; }
+    .car-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 32px; }
+    .spec { display: flex; align-items: flex-start; gap: 10px; }
+    .spec-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+    .spec-text { display: flex; flex-direction: column; }
+    .spec-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--gray-400); }
+    .spec-value { font-size: 14px; font-weight: 600; color: var(--gray-800); margin-top: 1px; }
+    .car-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .fleet-cta { background: var(--navy); padding: 72px 0; text-align: center; }
+    .fleet-cta h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: var(--white); margin-bottom: 14px; letter-spacing: -0.5px; }
+    .fleet-cta p { color: rgba(255,255,255,0.7); font-size: 17px; margin-bottom: 36px; }
+    .fleet-note { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px 28px; margin-top: 56px; display: flex; gap: 16px; align-items: flex-start; }
+    .fleet-note-icon { font-size: 24px; flex-shrink: 0; }
+    .fleet-note p { color: var(--gray-600); font-size: 14px; line-height: 1.7; margin: 0; }
+    .fleet-note strong { color: var(--gray-800); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Wheelie Good Wheels LLC" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fleet.html" class="active">Our Fleet</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://turo.com" target="_blank" class="btn btn-primary">Book on Turo ↗</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="fleet.html">Our Fleet</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://turo.com" target="_blank" class="btn btn-primary">Book on Turo ↗</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Our Fleet</h1>
+      <p>5-star rated vehicles available in the Tampa Bay area. Book through Turo in minutes.</p>
+    </div>
+  </section>
+
+  <!-- CARS -->
+  <section class="fleet-page">
+    <div class="container">
+
+      <!-- Tesla Model Y -->
+      <div class="car-card">
+        <div class="car-img">
+          <img
+            src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&q=85"
+            alt="2024 Tesla Model Y Long Range"
+            loading="eager"
+          />
+          <span class="car-badge">⚡ Electric</span>
+          <span class="car-rating">⭐ 5.0</span>
+        </div>
+        <div class="car-details">
+          <div class="car-year">2024</div>
+          <h2>Tesla Model Y<br/>Long Range</h2>
+          <p class="tagline">The premium electric SUV experience. Autopilot, massive range, and a jaw-dropping interior — all at Tampa International Airport.</p>
+          <div class="car-specs">
+            <div class="spec">
+              <span class="spec-icon">📍</span>
+              <div class="spec-text">
+                <span class="spec-label">Pickup Location</span>
+                <span class="spec-value">Tampa Intl Airport</span>
+              </div>
+            </div>
+            <div class="spec">
+              <span class="spec-icon">⚡</span>
+              <div class="spec-text">
+                <span class="spec-label">Powertrain</span>
+                <span class="spec-value">All-Electric AWD</span>
+              </div>
+            </div>
+            <div class="spec">
+              <span class="spec-icon">🛣️</span>
+              <div class="spec-text">
+                <span class="spec-label">Range</span>
+                <span class="spec-value">330+ miles</span>
+              </div>
+            </div>
+            <div class="spec">
+              <span class="spec-icon">👥</span>
+              <div class="spec-text">
+                <span class="spec-label">Seats</span>
+                <span class="spec-value">5 Passengers</span>
+              </div>
+            </div>
+            <div class="spec">
+              <span class="spec-icon">🤖</span>
+              <div class="spec-text">
+                <span class="spec-label">Features</span>
+                <span class="spec-value">Autopilot Included</span>
+              </div>
+            </div>
+            <div class="spec">
+              <span class="spec-icon">⭐</span>
+              <div class="spec-text">
+                <span class="spec-label">Turo Rating</span>
+                <span class="spec-value">5.0 ★ (All 5-Star)</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-actions">
+            <a href="https://turo.com/us/en/suv-rental/united-states/brandon-fl/tesla/model-y/3444633" target="_blank" class="btn btn-primary btn-lg">Book on Turo ↗</a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Ask a Question</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hyundai Santa Fe Sport -->
+      <div class="car-card reverse">
+        <div class="car-details">
+          <div class="car-year">2017</div>
+          <h2>Hyundai Santa Fe Sport<br/>2.4L AWD</h2>
+          <p class="tagline">The practical, no-fuss family SUV. Spacious, reliable, and competitively priced for everything from weekend trips to daily driving around Brandon.</p>
+          <div class="car-specs">
+            <div class="spec">
+              <span class="spec-icon">📍</span>
+              <div class="spec-text">
+                <span class="spec-label">Pickup Location</span>
+                <span class="spec-value">Brandon, FL</span>
+              </div>
+            </div>
+            <div class="spec">
+              <span class="spec-icon">⛽</span>
+              <div class="spec-text">
+                <span class="spec-label">Powertrain</span>
+                <span class="spec-value">2.4L Gas AWD</span>
+              </div>
+            </div>
+            <div class="spec">
+              <span class="spec-icon">🧳</span>
+              <div class="spec-text">
+                <span class="spec-label">Cargo Space</span>
+                <span class="spec-value">Generous SUV Trunk</span>
+              </div>
+            </div>
+            <div class="spec">
+              <span class="spec-icon">👥</span>
+              <div class="spec-text">
+                <span class="spec-label">Seats</span>
+                <span class="spec-value">5 Passengers</span>
+              </div>
+            </div>
+            <div class="spec">
+              <span class="spec-icon">🌡️</span>
+              <div class="spec-text">
+                <span class="spec-label">Climate</span>
+                <span class="spec-value">Full A/C &amp; Heat</span>
+              </div>
+            </div>
+            <div class="spec">
+              <span class="spec-icon">⭐</span>
+              <div class="spec-text">
+                <span class="spec-label">Turo Rating</span>
+                <span class="spec-value">5.0 ★ (All 5-Star)</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-actions">
+            <a href="https://turo.com/us/en/suv-rental/united-states/brandon-fl/hyundai/santa-fe-sport/3583923" target="_blank" class="btn btn-primary btn-lg">Book on Turo ↗</a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Ask a Question</a>
+          </div>
+        </div>
+        <div class="car-img">
+          <img
+            src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&q=85"
+            alt="2017 Hyundai Santa Fe Sport"
+            loading="lazy"
+          />
+          <span class="car-badge">🛣️ SUV</span>
+          <span class="car-rating">⭐ 5.0</span>
+        </div>
+      </div>
+
+      <!-- Note -->
+      <div class="fleet-note">
+        <span class="fleet-note-icon">💡</span>
+        <p><strong>Booking is handled securely through Turo.</strong> Turo provides insurance coverage, 24/7 roadside assistance, and secure payment processing. Click "Book on Turo" on any vehicle to check real-time availability and pricing.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fleet-cta">
+    <div class="container">
+      <h2>Not Sure Which Car to Pick?</h2>
+      <p>Send us a message and we'll help you choose the right vehicle for your trip.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+        <a href="https://turo.com" target="_blank" class="btn btn-white-outline btn-lg">View on Turo ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="logo.jpg" alt="Wheelie Good Wheels" class="footer-logo" />
+          <p>Quality car rentals through Turo.<br/>Florida's friendliest fleet.</p>
+        </div>
+        <div class="footer-nav">
+          <strong>Quick Links</strong>
+          <a href="index.html">Home</a>
+          <a href="fleet.html">Our Fleet</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://turo.com" target="_blank">Book on Turo ↗</a>
+        </div>
+        <div class="footer-contact">
+          <strong>Contact</strong>
+          <a href="mailto:Maximus@wheeliegoodrentals.com">Maximus@wheeliegoodrentals.com</a>
+          <span>Florida, USA</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Wheelie Good Wheels LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
