@@ -8,15 +8,37 @@ if (hamburger && mobileMenu) {
   });
 }
 
-// Contact form (basic submission handler — wire up to Formspree or similar)
+// Contact form — Formspree integration
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Sent! ✓';
-    btn.style.background = '#51b749';
+    btn.textContent = 'Sending...';
     btn.disabled = true;
-    // TODO: Add real form submission (e.g. Formspree, EmailJS)
+
+    const data = new FormData(contactForm);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mrejkqwg', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        btn.textContent = 'Sent! ✓';
+        btn.style.background = '#51b749';
+        contactForm.reset();
+      } else {
+        btn.textContent = 'Error — Try Again';
+        btn.style.background = '#e74c3c';
+        btn.disabled = false;
+      }
+    } catch (err) {
+      btn.textContent = 'Error — Try Again';
+      btn.style.background = '#e74c3c';
+      btn.disabled = false;
+    }
   });
 }
