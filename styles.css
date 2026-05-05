@@ -233,3 +233,179 @@ body { font-family: var(--font); color: var(--gray-800); background: var(--white
 .checkbox-label span { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
 .form-note { margin-top: 14px; text-align: center; font-size: 13px; color: var(--gray-400); }
 .form-note a { color: var(--orange); text-decoration: underline; }
+
+/* ===========================
+   MOBILE OPTIMIZATIONS
+   =========================== */
+
+/* ---- GLOBAL MOBILE ---- */
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .btn-xl { padding: 16px 32px; font-size: 16px; }
+  .btn-lg { padding: 14px 24px; font-size: 15px; }
+  .section-header { margin-bottom: 36px; }
+  .section-sub { font-size: 15px; }
+}
+
+/* ---- NAVBAR MOBILE ---- */
+@media (max-width: 480px) {
+  .nav-inner { height: 60px; }
+  .logo img { height: 44px; }
+  .hamburger { font-size: 22px; }
+  .mobile-menu { padding: 8px 16px 16px; }
+  .mobile-menu a { font-size: 15px; padding: 10px 0; }
+}
+
+/* ---- HERO MOBILE ---- */
+@media (max-width: 768px) {
+  .hero { min-height: 100svh; }
+  .hero-inner { padding: 80px 0 60px; }
+  .hero-content h1 { font-size: clamp(36px, 10vw, 56px); letter-spacing: -1px; margin-bottom: 16px; }
+  .hero-sub { font-size: 16px; margin-bottom: 28px; }
+  .hero-buttons { flex-direction: column; gap: 12px; }
+  .hero-buttons .btn { width: 100%; text-align: center; }
+  .hero-stats { gap: 14px; flex-wrap: wrap; }
+  .stat strong { font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+  .hero-inner { padding: 70px 0 48px; }
+  .hero-badge-pill { font-size: 12px; margin-bottom: 16px; }
+  .hero-content h1 { font-size: clamp(32px, 9vw, 44px); }
+  .hero-sub { font-size: 15px; }
+  .hero-stats { display: none; }
+}
+
+/* ---- TRUST BAR MOBILE ---- */
+@media (max-width: 480px) {
+  .trust-bar { padding: 14px 0; }
+  .trust-item { font-size: 12px; }
+  .trust-inner { gap: 12px; justify-content: flex-start; padding: 0 16px; overflow-x: auto; flex-wrap: nowrap; }
+}
+
+/* ---- FLEET MOBILE ---- */
+@media (max-width: 768px) {
+  .fleet { padding: 64px 0; }
+  .fleet-grid { grid-template-columns: 1fr; gap: 20px; }
+  .fleet-img-wrap { height: 200px; }
+}
+
+@media (max-width: 480px) {
+  .fleet { padding: 48px 0; }
+  .fleet-img-wrap { height: 180px; }
+  .fleet-info { padding: 20px; }
+  .fleet-info h3 { font-size: 18px; }
+}
+
+/* ---- FEATURES MOBILE ---- */
+@media (max-width: 768px) {
+  .features { padding: 64px 0; }
+  .features-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .feature-card { padding: 24px 18px; }
+  .feature-icon { font-size: 28px; margin-bottom: 12px; }
+  .feature-card h3 { font-size: 15px; }
+  .feature-card p { font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  .features { padding: 48px 0; }
+  .features-grid { grid-template-columns: 1fr; gap: 14px; }
+  .feature-card { padding: 22px 18px; }
+}
+
+/* ---- HOW IT WORKS MOBILE ---- */
+@media (max-width: 768px) {
+  .how-it-works { padding: 64px 0; }
+  .steps { flex-direction: column; align-items: center; gap: 0; }
+  .step { max-width: 100%; width: 100%; padding: 24px 20px; text-align: left; display: flex; gap: 20px; align-items: flex-start; }
+  .step-num { width: 50px; height: 50px; font-size: 20px; flex-shrink: 0; margin: 0; }
+  .step-content { flex: 1; }
+  .step h3 { font-size: 17px; margin-bottom: 6px; }
+  .step p { font-size: 14px; }
+  .step-arrow { display: none; }
+  .how-it-works .mt-48 { margin-top: 32px; }
+}
+
+@media (max-width: 480px) {
+  .how-it-works { padding: 48px 0; }
+}
+
+/* ---- CTA BANNER MOBILE ---- */
+@media (max-width: 768px) {
+  .cta-banner { padding: 64px 0; }
+  .cta-banner h2 { font-size: clamp(28px, 7vw, 44px); }
+  .cta-banner p { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .cta-banner { padding: 48px 0; }
+  .cta-banner .btn-xl { width: 100%; }
+}
+
+/* ---- FOOTER MOBILE ---- */
+@media (max-width: 768px) {
+  .footer { padding: 48px 0 24px; }
+  .footer-top { margin-bottom: 36px; gap: 28px; }
+  .footer-logo { height: 48px; }
+}
+
+@media (max-width: 480px) {
+  .footer-bottom { font-size: 12px; }
+}
+
+/* ---- PAGE HERO MOBILE ---- */
+@media (max-width: 768px) {
+  .page-hero { padding: 56px 0; }
+  .page-hero h1 { font-size: clamp(28px, 8vw, 44px); }
+  .page-hero p { font-size: 16px; }
+}
+
+/* ---- FLEET PAGE MOBILE ---- */
+@media (max-width: 768px) {
+  .fleet-detail { padding: 56px 0; }
+  .fleet-detail-grid { grid-template-columns: 1fr !important; gap: 32px; }
+}
+
+/* ---- ABOUT PAGE MOBILE ---- */
+@media (max-width: 768px) {
+  .about-section { padding: 56px 0; }
+  .about-text h2 { font-size: 26px; }
+  .value-card { padding: 18px; }
+}
+
+/* ---- CONTACT PAGE MOBILE ---- */
+@media (max-width: 768px) {
+  .contact-section { padding: 56px 0; }
+  .contact-form-wrap { padding: 28px 20px; }
+}
+
+@media (max-width: 480px) {
+  .contact-form-wrap { padding: 22px 16px; border-radius: 12px; }
+  .form-group input, .form-group textarea { font-size: 16px; } /* Prevents iOS zoom on focus */
+  .btn-full { width: 100%; }
+}
+
+/* ---- FOOTER LINKS MOBILE ---- */
+@media (max-width: 480px) {
+  .footer-inner { display: flex; flex-direction: column; gap: 8px; text-align: center; }
+  .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .footer-links a { font-size: 13px; }
+  .footer-copy { font-size: 12px; }
+}
+
+/* ---- CHAT WIDGET MOBILE ---- */
+@media (max-width: 480px) {
+  #wgw-chat-window {
+    width: calc(100vw - 24px) !important;
+    right: 12px !important;
+    bottom: 80px !important;
+    max-height: 70vh !important;
+  }
+  #wgw-chat-btn {
+    right: 12px !important;
+    bottom: 12px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+  }
+  #wgw-chat-messages { max-height: calc(70vh - 130px) !important; }
+}
