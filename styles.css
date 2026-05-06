@@ -78,18 +78,29 @@ body { font-family: var(--font); color: var(--gray-800); background: var(--white
 .hero-bg {
   position: absolute; inset: 0;
   background-color: var(--navy-dark);
-  background-image: url('logo.jpg');
-  background-size: 33%;
-  background-repeat: no-repeat;
-  background-position: center center;
   z-index: 0;
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(15,30,60,0.82) 0%, rgba(15,30,60,0.65) 50%, rgba(15,30,60,0.75) 100%);
+  background: linear-gradient(135deg, rgba(15,30,60,0.80) 0%, rgba(15,30,60,0.60) 50%, rgba(15,30,60,0.72) 100%);
   z-index: 1;
 }
-.hero-inner { position: relative; z-index: 2; padding: 100px 0 80px; }
+.hero-logo-watermark {
+  position: absolute; inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.hero-logo-watermark img {
+  width: 33vw;
+  max-width: 480px;
+  min-width: 200px;
+  opacity: 0.18;
+  mix-blend-mode: screen;
+}
+.hero-inner { position: relative; z-index: 3; padding: 100px 0 80px; }
 .hero-content { max-width: 640px; }
 .hero-badge-pill {
   display: inline-block;
