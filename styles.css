@@ -201,8 +201,8 @@ body { font-family: var(--font); color: var(--gray-800); background: var(--white
 .footer { background: var(--navy-dark); color: rgba(255,255,255,0.75); padding: 72px 0 32px; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
 @media (max-width: 768px) { .footer-top { grid-template-columns: 1fr; gap: 36px; } }
-.footer-logo { height: 64px; width: auto; margin-bottom: 16px; border-radius: 8px; background: var(--white); padding: 4px; }
-.footer-brand p { font-size: 14px; line-height: 1.7; max-width: 280px; }
+.footer-logo { height: 64px; width: auto; margin-bottom: 16px; border-radius: 8px; background: var(--white); padding: 4px; display: block; margin-left: auto; margin-right: auto; }
+.footer-brand p { font-size: 14px; line-height: 1.7; max-width: 280px; text-align: center; }
 .footer-nav, .footer-contact { display: flex; flex-direction: column; gap: 10px; }
 .footer-nav strong, .footer-contact strong { color: var(--white); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
 .footer-nav a, .footer-contact a, .footer-contact span { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; transition: color 0.2s; }
