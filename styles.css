@@ -175,6 +175,17 @@ body { font-family: var(--font); color: var(--gray-800); background: var(--white
 
 /* ---- HOW IT WORKS ---- */
 .how-it-works { padding: 100px 0; background: var(--navy); }
+
+/* CO-HOST */
+.cohost { padding: 100px 0; background: linear-gradient(135deg, #0a1628 0%, #1b3a6b 100%); }
+.cohost-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin: 56px 0 48px; }
+.cohost-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 36px 28px; transition: transform 0.25s, background 0.25s; }
+.cohost-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.10); }
+.cohost-icon { font-size: 36px; margin-bottom: 16px; }
+.cohost-card h3 { font-size: 18px; font-weight: 700; color: var(--orange); margin-bottom: 12px; }
+.cohost-card p { font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.7; }
+.cohost-cta { text-align: center; padding-top: 16px; }
+.cohost-cta p { color: rgba(255,255,255,0.7); font-size: 16px; margin-bottom: 20px; }
 .how-it-works .section-title { color: var(--white); }
 .how-it-works .section-sub { color: rgba(255,255,255,0.65); }
 .steps { display: flex; align-items: flex-start; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 0; }
