@@ -60,9 +60,9 @@ body { font-family: var(--font); color: var(--gray-800); background: var(--white
 
 /* ---- NAVBAR ---- */
 .navbar { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--gray-200); box-shadow: 0 2px 12px rgba(27,58,107,0.08); }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; position: relative; }
 .logo img { height: 56px; width: auto; display: block; }
-.logo { text-decoration: none; font-size: 26px; font-weight: 900; color: var(--orange); letter-spacing: -0.5px; text-transform: uppercase; transition: opacity 0.2s; }
+.logo { text-decoration: none; font-size: 26px; font-weight: 900; color: var(--orange); letter-spacing: -0.5px; text-transform: uppercase; transition: opacity 0.2s; position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
 .logo:hover { opacity: 0.85; }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
 .nav-links a { text-decoration: none; color: var(--gray-800); font-weight: 500; font-size: 15px; transition: color 0.2s; }
